@@ -1,0 +1,83 @@
+def startGame():
+  #defines the difficulty input of the game
+  level = 0
+  print "Welcome to the my quiz, hopefully you have yourself a good time while playing!"
+  difficulty = raw_input("Please type select a difficulty by typing Easy, Medium, or Hard:")
+  if difficulty in ["Easy", "easy"]:
+    level = 1
+    print "Let's get started!"
+    print easyGame()
+  if difficulty not in ["Easy", "easy"]:
+    if difficulty in ["Medium", "medium"]:
+      level = 2
+      print "Let's get started! This one is a little Tougher."
+      print mediumGame()
+    if difficulty not in ["Medium", "medium"]:
+      if difficulty in ["Hard", "hard"]:
+        level = 3
+        print "Let's get started! This one will be a doozy!"
+        print hardGame()
+    print "Invalid Difficulty"
+
+
+
+#Sets the variable answer to blank
+def answer(blank_answer, blank_number, dialog_index, dialog):
+  while True:
+    guess = raw_input("Fill in the blank: ")
+    if guess == blank_answer:
+      dialog[dialog_index] = blank_answer
+      print " ".join(dialog)
+      print
+      break
+    print "That is not the correct answer, please try again."
+
+
+# Defines the Easy Difficulty text and answer
+def easyGame():
+  easy_dialog = ["This quiz is an example of something written in", "__1__", ". It was a fanatastic", "__2__", "to practice what we learned. It includes things like if and ", "__3__", "loops. If you have any ", "__4__", "it is a great idea to look around for your own information to help develop a solution or to modify one already done."]
+  print " ".join(easy_dialog)
+  print
+
+  #blank 1
+  print answer("python", "1", 1, easy_dialog)
+  #blank 2
+  print answer("chance", "2", 3, easy_dialog)
+  #blank 3
+  print answer("while", "3", 5, easy_dialog)
+  #blank 4
+  print answer("questions", "4", 7, easy_dialog)
+  print "You did it!"
+
+#Defines the Medium Difficulty text and answer
+def mediumGame():
+  medium_dialog = ["In web development there are lots of different ", "__1__", ",! Knowing which ones are right for what you want to do is ", "__2__", "to having the skills you need to work as a developer", "__3__", "is one of the best languages to learn as a new developer as it gives you many cues to context and syntax.", "But never" "__4__", "to have fun with what you decide to do!"]
+  print " ".join(medium_dialog)
+  print
+  #blank 1
+  print answer("languages", "1", 1, medium_dialog)
+  #blank 2
+  print answer("critical", "2", 3, medium_dialog)
+  #blank 3
+  print answer("HTML", "3", 5, medium_dialog)
+  #blank 4
+  print answer("forget", "4", 7, medium_dialog)
+  print "You did it! That was a little harder.."
+
+#Defines the Hard Difficulty text and answer
+def hardGame():
+  hard_dialog = ["I must not", "__1__", "\n Fear is the", "__2__", ".\n Fear is the little-death that brings total obliteration. \n I will face my fear. \n I will permit it to pass over me and through me. \n And when it has gone past I will turn the ", "__3__", "eye to see its path. \n Where the fear has gone there will be nothing. \n Only", "__4__", "will remain."]
+  print " ".join(hard_dialog)
+  print
+  #blank 1
+  print answer("fear", "1", 1, hard_dialog)
+  #blank 2
+  print answer("mind-killer", "2", 3, hard_dialog)
+  #blank 3
+  print answer("inner", "3", 5, hard_dialog)
+  #blank 4
+  print answer("I", "4", 7, hard_dialog)
+  print "You did it! Whew! That was a tough one!"
+
+
+print startGame()
