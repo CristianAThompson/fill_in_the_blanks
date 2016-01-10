@@ -7,17 +7,15 @@ def startGame():
     level = 1
     print "Let's get started!"
     easyGame()
-  if difficulty.lower() != "easy":
-    if difficulty.lower() == "medium":
-      level = 2
-      print "Let's get started! This one is a little Tougher."
-      mediumGame()
-    if difficulty.lower() != "medium":
-      if difficulty.lower() == "hard":
-        level = 3
-        print "Let's get started! This one will be a doozy!"
-        hardGame()
-    print "Invalid Difficulty"
+  elif difficulty.lower() == "medium":
+    level = 2
+    print "Let's get started! This one is a little Tougher."
+    mediumGame()
+  elif difficulty.lower() == "hard":
+    level = 3
+    print "Let's get started! This one will be a doozy!"
+    hardGame()
+  print "Invalid Difficulty"
 
 
 
