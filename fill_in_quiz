@@ -3,20 +3,20 @@ def startGame():
   level = 0
   print "Welcome to the my quiz, hopefully you have yourself a good time while playing!"
   difficulty = raw_input("Please type select a difficulty by typing Easy, Medium, or Hard:")
-  if difficulty in ["Easy", "easy"]:
+  if difficulty.lower() == "easy":
     level = 1
     print "Let's get started!"
-    print easyGame()
-  if difficulty not in ["Easy", "easy"]:
-    if difficulty in ["Medium", "medium"]:
+    easyGame()
+  if difficulty.lower() != "easy":
+    if difficulty.lower() == "medium":
       level = 2
       print "Let's get started! This one is a little Tougher."
-      print mediumGame()
-    if difficulty not in ["Medium", "medium"]:
-      if difficulty in ["Hard", "hard"]:
+      mediumGame()
+    if difficulty.lower() != "medium":
+      if difficulty.lower() == "hard":
         level = 3
         print "Let's get started! This one will be a doozy!"
-        print hardGame()
+        hardGame()
     print "Invalid Difficulty"
 
 
