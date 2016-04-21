@@ -1,7 +1,7 @@
 def startGame():
   #defines the difficulty input of the game
   level = 0
-  print "Welcome to the my quiz, hopefully you have yourself a good time while playing!"
+  print "Welcome to my quiz, hopefully you have yourself a good time while playing!"
   difficulty = raw_input("Please type select a difficulty by typing Easy, Medium, or Hard:")
   if difficulty.lower() == "easy":
     level = 1
